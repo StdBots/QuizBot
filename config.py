@@ -1,14 +1,5 @@
 import os
 
-def get_env(name: str, required=True, default=None):
-    value = os.getenv(name, default)
-    if required and not value:
-        raise ValueError(f"❌ Environment variable '{name}' missing!")
-    return value
-
-# 🔑 Required
-TELEGRAM_TOKEN = get_env("BOT_TOKEN")
-MONGO_URI = get_env("MONGO_URL")
-
-# 📦 Optional
-DB_NAME = os.getenv("DB_NAME", "quizbot")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "YOUR_BOT_TOKEN_HERE")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+DB_NAME = os.getenv("DB_NAME", "exactquizbot")
