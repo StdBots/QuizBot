@@ -1,34 +1,29 @@
 {
-  "name": "IndianQuizBot",
-  "description": "Telegram QuizBot-style platform where users create and play quizzes",
-  "repository": "https://github.com/YOUR_USERNAME/IndianQuizBot",
+  "name": "ExactQuizBot",
+  "description": "Telegram Quiz Bot — exact QuizBot clone with group leaderboard & speed scoring",
   "keywords": ["telegram", "quiz", "bot", "python"],
-
   "env": {
-    "BOT_TOKEN": {
-      "description": "Telegram Bot Token from BotFather",
+    "TELEGRAM_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
       "required": true
     },
-    "MONGO_URL": {
-      "description": "MongoDB connection string",
+    "MONGO_URI": {
+      "description": "MongoDB connection string (MongoDB Atlas free tier works)",
       "required": true
     },
     "DB_NAME": {
-      "description": "Database name",
-      "value": "quizbot"
+      "description": "MongoDB database name",
+      "value": "exactquizbot",
+      "required": false
     }
   },
-
   "formation": {
     "worker": {
       "quantity": 1,
       "size": "basic"
     }
   },
-
   "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
+    { "url": "heroku/python" }
   ]
 }
